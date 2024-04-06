@@ -32,7 +32,7 @@
   font-size: 24px;
 }
 
-.loginBox{
+.RegisterBox{
     height: 700px;
     padding: 20px;
     background-color: white;
@@ -42,7 +42,7 @@
     justify-content: space-between;
 }
 
-.loginInput{
+.RegisterInput{
     height: 50px;
     border-radius: 10px;
     border: 1px solid gray;
@@ -50,7 +50,7 @@
     padding-left: 20px;
 }
 
-.loginInputs{
+.RegisterInputs{
   height: 50px;
   border-radius: 10px;
   border: 1px solid gray;
@@ -83,11 +83,15 @@
   justify-content: space-between;
 }
 
-.loginInput:focus{
+.RegisterInput:focus{
     outline: none;
 }
 
-.loginInputs:focus{
+.RegisterInputs:focus{
+  outline: none;
+}
+
+.Inputmonth, .InputDY:focus{
   outline: none;
 }
 
