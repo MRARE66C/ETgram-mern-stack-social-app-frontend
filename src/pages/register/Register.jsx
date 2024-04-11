@@ -96,6 +96,7 @@ export default function Register() {
               </select>
             </div>
             <button className="loginButton" type="submit">Sign Up</button>
+            <span className="registerForgot">You already have an account please, Sign in?</span>
             <button className="loginRegisterButton" onClick={handleLoginRedirect}>
               Log in to Account
             </button>
