@@ -21,3 +21,21 @@ export const Unfollow = (userId) => ({
     type: "UNFOLLOW",
     payload: userId,
 });
+
+export const UpdateStart = (userCredentials) => ({
+    type: "UPDATE_START"
+});
+
+export const UpdateSuccess = (user) => ({
+    type: "UPDATE_SUCCESS",
+    payload: user,
+});
+
+export const UpdateFailure = (error) => ({
+    type: "UPDATE_FAILURE",
+    payload: error,
+});
+
+export const Logout = () => ({
+    type: "LOGOUT"
+});

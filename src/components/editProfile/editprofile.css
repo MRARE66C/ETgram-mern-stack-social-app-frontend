@@ -1,0 +1,88 @@
+.editProfile{
+    flex: 5.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.editProfileContainer{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.editProfileTitle{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.editProfileForm{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.editProfileItem{
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+}
+.editProfileInput{
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    outline: none;
+}
+
+.editProfileInputDescription{
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    outline: none;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.editProfileButton{
+    width: 40%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: teal;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.shareOption{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.shareOptionText{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.shareOption{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
