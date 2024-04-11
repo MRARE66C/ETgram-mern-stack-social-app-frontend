@@ -3,6 +3,7 @@ import Login from "./pages/login/Login";
 import Profile from "./pages/profile/Profile";
 import Register from "./pages/register/Register";
 import UpdateProfile from "./pages/updateprofile/UpdateProfile";
+import Welcome from "./pages/welcome/Welcome";
 import { 
   BrowserRouter as Router,
   Route,
@@ -32,6 +33,7 @@ function RouteComponent() {
       <Route path="/register" element={ user ? <></> : <Register /> }/>
       <Route path="/profile/:username" element={ <Profile /> }/>
       <Route path="/profile/:username/edit" element={ <UpdateProfile/>}/>
+      <Route path="/welcome" element={ <Welcome /> }/>
     </Routes>
   );
 }
