@@ -10,6 +10,11 @@ export default function Register() {
   const passwordRef = useRef();
   const passwordAgainRef = useRef();
   const navigate = useNavigate();
+  const firstNameRef = useRef();
+  const lastNameRef = useRef();
+  const monthRef = useRef();
+  const dayRef = useRef();
+  const yearRef = useRef();
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -18,6 +23,8 @@ export default function Register() {
     }
     else{
       const user = {
+        firstNameRef: firstNameRef.current.value,
+        lastNameRef: lastNameRef.current.value,
         username: usernameRef.current.value,
         email: emailRef.current.value,
         password: passwordRef.current.value,
@@ -46,14 +53,51 @@ export default function Register() {
           </span>
         </div>
         <div className="loginRight">
-          <form className="loginBox" onSubmit={handleClick}>
-            <input placeholder="Username" required ref={usernameRef} className="loginInput" />
-            <input placeholder="Email" type="email" required ref={emailRef} className="loginInput" />
-            <input placeholder="Password" type="password" required minLength="6" ref={passwordRef} className="loginInput" />
-            <input placeholder="Password Again" type="password" required minLength="6" ref={passwordAgainRef} className="loginInput" />
+          <form className="RegisterBox" onSubmit={handleClick}>
+            <input placeholder="Username" required ref={usernameRef} className="RegisterInput" />
+            <input placeholder="Email" type="email" required ref={emailRef} className="RegisterInput" />
+            <input placeholder="Password" type="password" required minLength="6" ref={passwordRef} className="RegisterInput" />
+            <input placeholder="Confirm Password" type="password" required minLength="6" ref={passwordAgainRef} className="RegisterInput" />
+            <div className="inputWrapper">
+              <input placeholder="First Name"type="text" ref={firstNameRef} required className="RegisterInputs"/>
+              <input placeholder="Last Name"type="text"  ref={lastNameRef} required className="RegisterInputs" />
+            </div>
+            <div className="inputWrapper">
+              <select placeholder="Month" ref={monthRef} required className="Inputmonth">
+                <option value="">Select Month</option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+              <select placeholder="Day" ref={dayRef} required className="InputDY">
+                <option value="" className=".selectMonthDayYear">Select Day</option>
+                {Array.from({ length: 31 }, (_, i) => i + 1).map((day) => (
+                  <option key={day} value={day}>
+                    {day}
+                  </option>
+                ))}
+              </select>
+              <select placeholder="Year" ref={yearRef} required className="InputDY ">
+                <option value="">Select Year</option>
+                {Array.from({ length: 65 }, (_, i) => 1960 + i).map((year) => (
+                  <option key={year} value={year}>
+                    {year}
+                  </option>
+                ))}
+              </select>
+            </div>
             <button className="loginButton" type="submit">Sign Up</button>
             <button className="loginRegisterButton" onClick={handleLoginRedirect}>
-              Log into Account
+              Log in to Account
             </button>
           </form>
         </div>

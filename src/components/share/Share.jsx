@@ -5,6 +5,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { useRef, useState } from "react";
 import axios from "axios";
 
+
 export default function Share() {
   
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -68,18 +69,6 @@ export default function Share() {
                     <span className="shareOptionText">Photo or Video</span>
                     <input style={{display: "none"}} type="file" id="file" accept=".png, .jpeg, .jpg" onChange={(e) => setFile(e.target.files[0])}/>
                 </label>
-                <div className="shareOption">
-                    <Label htmlColor="blue" className="shareIcon"/>
-                    <span className="shareOptionText">Tag</span>
-                </div>
-                <div className="shareOption">
-                    <Room htmlColor="green" className="shareIcon"/>
-                    <span className="shareOptionText">Location</span>
-                </div>
-                <div className="shareOption">
-                    <EmojiEmotions htmlColor="goldenrod" className="shareIcon"/>
-                    <span className="shareOptionText">Feelings</span>
-                </div>
             </div>
             <button className="shareButton" type = "submit">Share</button>
         </form>
