@@ -28,12 +28,11 @@ function RouteComponent() {
 
   return (
     <Routes>
-      <Route path="/" element={ user ? <Home /> : <Register /> }/>
+      <Route path="/" element={ user ? <Home /> : <Welcome /> }/>
       <Route path="/login" element={ user ? <></> : <Login /> }/>
       <Route path="/register" element={ user ? <></> : <Register /> }/>
       <Route path="/profile/:username" element={ <Profile /> }/>
       <Route path="/edit" element={ <UpdateProfile/>}/>
-      <Route path="/welcome" element={ <Welcome /> }/>
     </Routes>
   );
 }
