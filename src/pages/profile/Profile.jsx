@@ -47,7 +47,7 @@ export default function Profile() {
               />
             </div>
             <div className="profileInfo">
-                <h4 className="profileInfoName"> {Users.username}</h4>
+                <h4 className="profileInfoName"> {Users.displayName ? Users.displayName : Users.username}</h4>
                 <span className="profileInfoDesc">{Users.desc}!</span>
             </div>
           </div>

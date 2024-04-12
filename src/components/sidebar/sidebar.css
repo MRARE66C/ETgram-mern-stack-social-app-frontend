@@ -55,4 +55,10 @@
   list-style: none;
 }
 
+.sidebarLink{
+  color: black;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+}
 

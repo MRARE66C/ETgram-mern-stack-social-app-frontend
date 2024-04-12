@@ -23,11 +23,11 @@ export default function Register() {
     }
     else{
       const user = {
-        firstNameRef: firstNameRef.current.value,
-        lastNameRef: lastNameRef.current.value,
         username: usernameRef.current.value,
         email: emailRef.current.value,
         password: passwordRef.current.value,
+        displayName: firstNameRef.current.value + " " + lastNameRef.current.value,
+        dateOfBirth: new Date(yearRef.current.value, monthRef.current.value, dayRef.current.value),
       };
       try{
         await axios.post("/auth/register", user);

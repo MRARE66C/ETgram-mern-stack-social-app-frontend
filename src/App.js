@@ -32,7 +32,7 @@ function RouteComponent() {
       <Route path="/login" element={ user ? <></> : <Login /> }/>
       <Route path="/register" element={ user ? <></> : <Register /> }/>
       <Route path="/profile/:username" element={ <Profile /> }/>
-      <Route path="/profile/:username/edit" element={ <UpdateProfile/>}/>
+      <Route path="/edit" element={ <UpdateProfile/>}/>
       <Route path="/welcome" element={ <Welcome /> }/>
     </Routes>
   );

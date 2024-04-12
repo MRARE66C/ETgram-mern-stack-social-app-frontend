@@ -3,7 +3,7 @@ import { Users } from "../../dummyData";
 import Online from "../online/Online";
 import { useEffect, useState} from "react";
 import axios from "axios";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { useContext } from "react";
 import {Add, Remove} from "@material-ui/icons";
@@ -13,6 +13,7 @@ export default function Rightbar({ user }) {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const { user: currentUser, dispatch } = useContext(AuthContext);
   const [followed, setFollowed] = useState(currentUser?.followings?.includes(user?._id) || false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchFriends = async () => {
@@ -28,6 +29,10 @@ export default function Rightbar({ user }) {
     fetchFriends();
   }, [user]);
 
+  const handleUpdateProfileClick = () => {
+    navigate("/edit");
+  };
+
   const handleClick = async () => {
     try {
       if (followed) {
@@ -42,6 +47,8 @@ export default function Rightbar({ user }) {
       console.log(err);
     }
   };
+
+  
 
   const HomeRightbar = () => {
 
@@ -78,6 +85,11 @@ export default function Rightbar({ user }) {
             {followed ? <Remove /> : <Add />}
           </button>
         )}
+        {user.username === currentUser.username && (
+          <button className="rightbarFollowButton" onClick={handleUpdateProfileClick}>
+          Update Profile
+          </button>
+          )}
         <h4 className="rightbarTitle">User information</h4>
         <div className="rightbarInfo">
           <div className="rightbarInfoItem">

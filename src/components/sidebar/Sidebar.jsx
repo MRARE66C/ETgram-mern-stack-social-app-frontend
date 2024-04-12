@@ -2,10 +2,13 @@ import "./sidebar.css";
 import { Home } from "@material-ui/icons";
 import { Users } from "../../dummyData";
 import CloseFriend from "../closeFriend/CloseFriend";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Sidebar() {
+    const navigate = useNavigate();
 
     function handleLogout() {
+        navigate('/login');
         localStorage.clear();
         window.location.reload();
     }
@@ -15,8 +18,10 @@ export default function Sidebar() {
       <div className="sidebarWrapper">
         <ul className="sidebarList">
           <li className="sidebarListItem">
-            <Home className="sidebarIcon" />
-            <span className="sidebarListItemText">Home</span>
+              <Link to="/" className="sidebarLink">
+                <Home className="sidebarIcon" />
+                <span className="sidebarListItemText">Home</span>
+              </Link>
           </li>
         </ul>
         <button className="sidebarButton" onClick={handleLogout}>Logout</button>
