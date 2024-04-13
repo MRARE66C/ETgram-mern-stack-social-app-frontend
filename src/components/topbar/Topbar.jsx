@@ -1,12 +1,15 @@
 import "./topbar.css";
+import SearchBar from "../searchbar/SearchBar";
 import { Search, Person, Chat, Notifications } from "@material-ui/icons";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import SearchResultList from "../searchbar/SearchResultList";
 
 export default function Topbar() {
   const {user} = useContext(AuthContext);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const [result, setResult] = useState([]);
 
   return (
     <div className="topbarContainer">
@@ -16,13 +19,8 @@ export default function Topbar() {
         </Link>
       </div>
       <div className="topbarCenter">
-        <div className="searchbar">
-          <Search className="searchIcon" />
-          <input
-            placeholder="Search for friend, post or video"
-            className="searchInput"
-          />
-        </div>
+        <SearchBar setResult = {setResult} className="searchbar"/>
+        <SearchResultList result = {result} className= "resultList"/>
       </div>
       <div className="topbarRight">
         <div className="topbarLinks">
