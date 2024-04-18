@@ -10,7 +10,7 @@ export default function Sidebar() {
     function handleLogout() {
         navigate('/login');
         localStorage.clear();
-        window.location.reload();
+        window.location.reload(); 
     }
 
   return (
@@ -26,11 +26,11 @@ export default function Sidebar() {
         </ul>
         <button className="sidebarButton" onClick={handleLogout}>Logout</button>
         <hr className="sidebarHr" />
-        <ul className="sidebarFriendList">
+        {/* <ul className="sidebarFriendList">
           {Users.map((u) => (
             <CloseFriend key={u.id} user={u} />
           ))}
-        </ul>
+        </ul> */}
       </div>
     </div>
   );

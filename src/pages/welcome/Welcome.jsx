@@ -3,7 +3,7 @@ import "./welcome.css";
 import FeedStart from "../../components/feedforstart/FeedStart";
 
 export default function Welcome() {
-  const username = "thaboss";
+  const username = "mrare123";
   return (
     <div className="container">
       <div

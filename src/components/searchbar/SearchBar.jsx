@@ -30,7 +30,7 @@ export default function SearchBar({setResult}) {
       <div className="searchbar">
           <Search className="searchIcon" />
           <input
-            placeholder="Search for friend, post or video"
+            placeholder="Search for friend"
             className="searchInput"
             onChange={(e) => handleChange(e.target.value)}
           />
