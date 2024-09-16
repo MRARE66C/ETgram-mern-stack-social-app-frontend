@@ -44,6 +44,7 @@ export default function Login() {
               {isFetching ? <CircularProgress color = "white" size={"20px"}/> 
               : "Log In"}
             </button>
+            {error && <span className="loginError">{error}</span>}
             <span className="loginForgot">Forgot Password?</span>
             <button className="loginRegisterButton" onClick={handleRegister}>
               {isFetching ? <CircularProgress color = "white" size={"20px"}/> 
